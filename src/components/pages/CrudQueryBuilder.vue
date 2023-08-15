@@ -72,8 +72,6 @@ function generateQuery(selectedAction) {
     }
 }
 
-
-
 </script>
 <template>
     <br>
@@ -89,21 +87,16 @@ function generateQuery(selectedAction) {
     <select v-model="selectedAction" class="form-select">
         <option v-for="action in actions" :value="action">{{ action }}</option>
     </select>
-
     <div>Selected Action: {{ selectedAction }}</div>
     <br>
     <h3>3. Fill form based on selected table</h3>
-
     <div v-for="(field, i) in tableFields" :key="field.name">
         <label :for="field.name">{{ field.name }} </label>:
         <input class="form-control" :type="field.type" :id="field.name" @input="updateSelectedTableByInputValues">
     </div>
-
     <br>
-
     <button class="button" @click="generateQuery(selectedAction)">Generate query</button>
     <br>
-
     <div v-if="generatedQuery">
         <p>Generated Query:</p>
         <p>{{ generatedQuery }}</p>
@@ -122,7 +115,7 @@ function generateQuery(selectedAction) {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .form-select {
@@ -140,7 +133,7 @@ function generateQuery(selectedAction) {
     background-size: 16px 12px;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -164,7 +157,6 @@ function generateQuery(selectedAction) {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0.25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-
 </style>
